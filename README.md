@@ -4,6 +4,13 @@
 
 ---
 
+## Developer Details
+- **Email:** admin@d3vsoft.com
+- **Website:** https://d3vsoft.com
+- **Discord:** https://discord.gg/KtCPjNxndq
+
+---
+
 ## Screenshots
 ![Speedy.BG - Index](public/assets/images/readme/index.png)
 ![Speedy.BG - Track Shipment](public/assets/images/readme/track-shipment.png)
@@ -21,12 +28,6 @@
 - PHP 7.2
 - MySQL
 - ionCube Loader (PHP 7.2)
-
----
-
-## Developer Details
-- **Email:** admin@d3vsoft.com
-- **Website:** https://d3vsoft.com
 
 ---
 
