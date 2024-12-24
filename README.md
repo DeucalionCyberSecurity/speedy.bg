@@ -49,4 +49,4 @@ Access the admin panel to manage your shipments and settings:
 ## Installation
 1. Clone the repository to your local server:
    ```bash
-   git clone https://github.com/your-repo/speedy-bg.git
+   git clone https://github.com/DeucalionCyberSecurity/speedy.bg.git
