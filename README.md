@@ -20,6 +20,7 @@
 ## Requirements
 - PHP 7.2
 - MySQL
+- ionCube Loader (PHP 7.2)
 
 ---
 
