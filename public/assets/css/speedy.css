@@ -1,0 +1,16 @@
+/* Speedy Custom CSS */
+
+/* Danail Marinov 2020-02-17. Скрива картинката на товарителницата, която е в div с клас "divImageShipmentTracking", ако на екрана има div с клас "parcel"  */
+.divImageShipmentTracking { display: block; }
+.parcel + .divImageShipmentTracking { }
+.parcel ~ .divImageShipmentTracking { display: none; }
+
+
+/* Danail Marinov 2019-11-07 */
+div.divAllSteps { width: 100%;display: flex; flex-wrap: wrap; }
+div.divSingleStep { display: flex; padding: 5px; width: 438px; border: 1px solid #cac4be; margin: 0px 20px 20px 0px; background-color: #e6e7e8; }
+img.imgStep { border: 1px solid #cac4be;}
+div.divStepText, div.divStepTextColored { margin-left: 5px; width: 250px; font: 14px Arial Bulgarian, Arial, Helvetica, sans-serif; color: #414042; }
+div.divStepTextColored { color: #dc0032; }
+div.divAfterSteps { height: 30px; clear: both; }
+span.spanStepNumber { color: #dc0032; font-weight: bold; }

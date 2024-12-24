@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Корпоративна устойчивост | Speedy
+</title>
+        
+    <link rel="canonical" href="https://speedy.bg/bg/" />
+    <link rel="alternate" hreflang="bg" href="https://speedy.bg/bg/">
+    <link rel="alternate" hreflang="en" href="https://speedy.bg/en/">
+    <link rel="icon" sizes="32x32" href="public/favicon.ico">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800,900&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+
+
+
+    <link rel="stylesheet" type="text/css" href="public/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="public/assets/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="public/assets/css/speedy.css">
+    <link rel="stylesheet" type="text/css" href="public/bundles/extstenikcookies/css/cookies.min.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="canonical" href="">
+    <meta name="csrf-token" content="yAe9IGNuPLAfblg9UNAvTnImklFDfzriHOOQyN3f" />
+    <style>
+a#CybotCookiebotDialogPoweredbyCybot,
+div#CybotCookiebotDialogPoweredByText {
+  display: none;
+}</style>
+    <script>
+        var currentUrl = window.location.href;
+        console.log(currentUrl);
+        if(!currentUrl.includes('infoboard')){
+            let script = document.createElement('script');
+        script.id = 'Cookiebot';
+        if (currentUrl.includes('en')) {
+            script.setAttribute('data-culture', 'en');
+        }
+        script.src = 'https://consent.cookiebot.com/uc.js';
+        script.setAttribute('data-cbid', '1f0ed7e3-59aa-4ea1-9139-9ec4a3939278');
+        script.setAttribute('data-blockingmode', 'auto');
+        script.type = 'text/javascript';
+        document.head.appendChild(script);
+        }
+       
+
+    </script>
+    <script src="public/dist/js/bootstrap.js"></script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M8RZGVJF');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8RZGVJF" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container-fluid">
+        <div class="sb-slidebar sb-right">
+    <div class="menu-header">
+        <div class="menu-header-title"><img style="max-width: 100px;" src="public/assets/images/logo.svg" alt="Speedy"></div>
+        <nav class="navLang" id="navLangResponsive">
+            <a href="javascript:;" class="navLangHead">
+                <span> BG </span>
+                <svg aria-hidden="true" class="iconSVG">
+                    <use xlink:href="public/assets/images/svgSprite.svg#iconArrowDown"></use>
+                </svg>
+            </a>
+            <ul class="navLangBody">
+                <li class="selected">
+                    <a href="/bg/"><span>BG</span></a>
+                </li>
+                <li>
+                    <a href="/en/"><span>EN</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="form" id="formSearch">
+        <div class="field">
+            <form id="searchForm" method="GET" action="/bg/search">
+                            <input placeholder="Търси или проследи" type="search" name="q" id="search" class="searchNumber"
+                    required="">
+                                    <button class="searchButton">
+                    <svg aria-hidden="true" class="iconSVG iconSearch">
+                        <use xlink:href="public/assets/images/svgSprite.svg#iconSearch"></use>
+                    </svg>
+                </button>
+            </form>
+            <div id="results" style="display:none;"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var searchNumber = document.getElementsByClassName('serachNumber');
+        for (var i = 0; i < searchNumber.length; i++) {
+            searchNumber[i].addEventListener('input', function () {
+                var input = this.value;
+                if (input.startsWith('000') && input.length == 14) {
+                    this.value = input.slice(3);
+                }
+            });
+        }
+        document.addEventListener("buildJsLoaded", function () {
+            $('#searchForm').on('submit', function (e) {
+                $search = $('#search');
+                if ($search.val().length < 3) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        document.addEventListener("buildJsLoaded", function () {
+            var timeout = false;
+            var ajax = false;
+            var $searchInput = $("#search");
+            var ajaxCache = {};
+            $searchInput.on("keyup", function () {
+                if ($(this).val().length >= 3) {
+                    if (timeout) {
+                        clearTimeout(timeout);
+                        timeout = false;
+                    }
+                    if (ajax) {
+                        ajax.abort();
+                    }
+                    var val = $searchInput.val();
+                    if (val in ajaxCache) {
+                        $("#results").show().html(ajaxCache[val]);
+                    } else {
+                        timeout = setTimeout(function () {
+                            ajax = $.ajax({
+                                url: '/bg/search',
+                                data: {
+                                    q: val
+                                }
+                            }).done(function (response) {
+                                $("#results").show().html(response.html);
+                                ajaxCache[val] = response.html;
+                                timeout = false;
+                                ajax = false;
+                            });
+                        }, 200);
+                    }
+                }
+            });
+        });
+    </script>
+
+            <div id="menu">
+            <ul>
+                <li class="hasDropdown"><a href="javascript:;">
+                        Услуги
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="/bg/domestic-services" target="_self">
+                                Услуги в България
+                            </a></li>
+                        <li class=" hasDropdown"><a href="#" target="_self">
+                                Международни услуги
+                            </a>
+                            <ul class="dropdownSub">
+                                <li><a href="/bg/cee" target="_self">
+                                        Speedy Източна Европа Economy
+                                    </a></li>
+                                <li><a href="/bg/europe" target="_self">
+                                        DPD Западна Европа Economy
+                                    </a></li>
+                                <li><a href="/bg/other-destinations" target="_self">
+                                        Други дестинации
+                                    </a></li>
+                                <li><a href="/bg/requirements-to-international-shipments" target="_self">
+                                        Изисквания
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/bg/web-services" target="_self">
+                                Онлайн услуги
+                            </a></li>
+                        <li class=" hasDropdown"><a href="#" target="_self">
+                                Допълнителни услуги и такси
+                            </a>
+                            <ul class="dropdownSub">
+                                <li><a href="/bg/additional-services-for-shipments" target="_self">
+                                        За пратки
+                                    </a></li>
+                                <li><a href="/bg/payment-services" target="_self">
+                                        Платежни услуги
+                                    </a></li>
+                                <li><a href="/bg/administrative-services" target="_self">
+                                        Административни услуги
+                                    </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hasDropdown"><a href="javascript:;">
+                        Офиси и Автомати
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="/bg/speedy-offices-automats" target="_self">
+                                Офиси
+                            </a></li>
+                        <li><a href="/bg/automats-information" target="_self">
+                                Автомати
+                            </a></li>
+                    </ul>
+                </li>
+                <li class="hasDropdown"><a href="#">
+                        My Speedy
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="https://myspeedy.speedy.bg" target="_blank">
+                                Вход
+                            </a></li>
+                        <li><a href="/bg/my-speedy" target="_self">
+                                Инфо
+                            </a></li>
+                    </ul>
+                </li>
+                <li class="highlight hasDropdown"><a href="javascript:;">
+                        За компанията
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="/bg/about-company" target="_self">
+                                Контакти
+                            </a></li>
+                        <li><a href="/bg/news" target="_self">
+                                Новини
+                            </a></li>
+                        <li><a href="/bg/corporate-information" target="_self">
+                                Корпоративна информация
+                            </a></li>
+                        <li><a href="/bg/careers-operational-programs" target="_self">
+                                Кариери и оперативни програми
+                            </a></li>
+                        <li><a href="/bg/investor" target="_self">
+                                За инвеститори
+                            </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>        <div id="sb-site">
+
+            <header id="header">
+    <div class="headerBottom">
+        <div class="wrapper clearfix">
+            <a href="bg" class="logo"><img
+                    src="public/assets/images/logo.svg" alt="Speedy"></a>
+            <div id="btnMenu" class="btn"><span></span></div>
+            <nav class="navLang" id="navLang">
+                <a href="javascript:;" class="navLangHead">
+                    <span>BG</span>
+                    <svg aria-hidden="true" class="iconSVG">
+                        <use xlink:href="public/assets/images/svgSprite.svg#iconArrowDown"></use>
+                    </svg>
+                </a>
+                <ul class="navLangBody">
+                    <li class="selected">
+                        <a
+                            href="bg/posts/activities-corporate-sustainability"><span>Български</span></a>
+                    </li>
+                    <li class="">
+                        <a
+                            href="en/posts/activities-corporate-sustainability"><span>English</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="form" id="formSearch">
+                <div class="field">
+                    <form id="searchForm" method="GET" action="/bg/search">
+                        <input placeholder="Търси или проследи" type="search"
+                            name="q" id="search" class="searchNumber" required="">
+                        <button class="searchButton">
+                            <svg aria-hidden="true" class="iconSVG iconSearch">
+                                <use xlink:href="public/assets/images/svgSprite.svg#iconSearch"></use>
+                            </svg>
+                        </button>
+                    </form>
+                    <div id="results" style="display:none;"></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var searchNumber = document.getElementsByClassName('serachNumber');
+                for (var i = 0; i < searchNumber.length; i++) {
+                    searchNumber[i].addEventListener('input', function() {
+                        var input = this.value;
+                        if (input.startsWith('000') && input.length == 14) {
+                            this.value = input.slice(3);
+                        }
+                    });
+                }
+                document.addEventListener("buildJsLoaded", function() {
+                    $('#searchForm').on('submit', function(e) {
+                        $search = $('#search');
+                        if ($search.val().length < 3) {
+                            e.preventDefault();
+                        }
+                    });
+                });
+            </script>
+            <script type="text/javascript">
+                document.addEventListener("buildJsLoaded", function() {
+                    var timeout = false;
+                    var ajax = false;
+                    var $searchInput = $("#search");
+                    var ajaxCache = {};
+                    $searchInput.on("keyup", function() {
+                        if ($(this).val().length >= 3) {
+                            if (timeout) {
+                                clearTimeout(timeout);
+                                timeout = false;
+                            }
+                            if (ajax) {
+                                ajax.abort();
+                            }
+                            var val = $searchInput.val();
+                            if (val in ajaxCache) {
+                                $("#results").show().html(ajaxCache[val]);
+                            } else {
+                                timeout = setTimeout(function() {
+                                    ajax = $.ajax({
+                                        url: '/bg/search',
+                                        data: {
+                                            q: val
+                                        }
+                                    }).done(function(response) {
+                                        $("#results").show().html(response.html);
+                                        ajaxCache[val] = response.html;
+                                        timeout = false;
+                                        ajax = false;
+                                    });
+                                }, 200);
+                            }
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <nav class="navMain">
+        <div class="wrapper clearfix">
+            <ul>
+                                                <li><a href="#">Услуги</a>
+                                        <ul class="dropdown">
+                                                                                                <li><a href="bg/domestic-services" target="_self">Услуги в България</a></li>
+                        
+                                                                                                                                                                        <li class=" hasDropdown"><a href="#"
+                                target="_self">Международни услуги</a>
+                            <ul class="dropdownSub">
+                                                                                                <li><a href="bg/cee" target="_self">Speedy Източна Европа Economy</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="bg/europe" target="_self">DPD Западна Европа Economy</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="bg/air-express" target="_self">Air Express</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="bg/requirements-to-international-shipments" target="_self">Изисквания</a>
+                                </li>
+                                                                                                                                                            </ul>
+                        </li>
+                        
+                                                                                                                                                                        <li class=" hasDropdown"><a href="#"
+                                target="_self">Допълнителни услуги и такси</a>
+                            <ul class="dropdownSub">
+                                                                                                <li><a href="bg/additional-services-for-shipments" target="_self">За пратки</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="bg/payment-services" target="_self">Платежни услуги</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="bg/additional" target="_self">Допълнителни услуги</a>
+                                </li>
+                                                                                                                                                            </ul>
+                        </li>
+                        
+                                                                                                                                                                        <li><a href="bg/web-services" target="_self">Онлайн услуги</a></li>
+                        
+                                                                                                                    </ul>
+                                    </li>
+                                                                                                <li><a href="#">Офиси и Автомати</a>
+                                        <ul class="dropdown">
+                                                                                                <li><a href="bg/speedy-offices-automats" target="_self">Офиси</a></li>
+                        
+                                                                                                                                                                        <li><a href="bg/automats-information" target="_self">Автомати</a></li>
+                        
+                                                                                                                    </ul>
+                                    </li>
+                                                                                                <li><a href="#">MySpeedy</a>
+                                        <ul class="dropdown">
+                                                                                                <li><a href="https://myspeedy.speedy.bg" target="_blank">Вход</a></li>
+                        
+                                                                                                                                                                        <li><a href="bg/my-speedy" target="_self">Инфо</a></li>
+                        
+                                                                                                                    </ul>
+                                    </li>
+                                                                                                <li><a href="#">За компанията</a>
+                                        <ul class="dropdown">
+                                                                                                <li><a href="bg/about-company" target="_self">Контакти</a></li>
+                        
+                                                                                                                                                                        <li><a href="bg/news" target="_self">Новини</a></li>
+                        
+                                                                                                                                                                        <li><a href="bg/corporate-information" target="_self">Корпоративна информация</a></li>
+                        
+                                                                                                                                                                        <li><a href="bg/careers-operational-programs" target="_self">Кариери и оперативни програми</a></li>
+                        
+                                                                                                                                                                        <li><a href="bg/investor" target="_self">За инвеститори</a></li>
+                        
+                                                                                                                    </ul>
+                                    </li>
+                                                                
+            </ul>
+
+            <div class="header-phones">
+                <div class="header-phones-items">
+                                        <a class="header-phone" href="tel:0 7001 7001" target="_self">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#phone1"></use>
+                        </svg>
+                        0 7001 7001
+                    </a>
+                    <a class="header-phone-mobile" href="tel:1 7001 7001" target="_self">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#phone2"></use>
+                        </svg>
+                        1 7001 7001
+                    </a>
+                                    </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<nav class="breadcrumbs">
+
+    <ul>
+                <li><a href="bg">Начало</a></li>
+
+                
+                <li><a href="bg/news">Новини</a></li>
+        
+
+
+
+        
+                <li><a href="bg/activities-corporate-sustainability">Корпоративна устойчивост</a></li>
+        
+
+
+
+            </ul>
+</nav>
+            <section id="main">
+    <div class="mainBody">
+        <div class="wrapper">
+            <div class="mainContent">
+                <h1 class="titleMain">Корпоративна устойчивост</h1>
+                <aside class="sidebar" id="mobile-posts-aside" style="display: none;">
+                <p class="titleAside">Новини</p>
+
+                <nav class="navAside">
+                    <ul>
+                                                                        <li class="first">
+                            <a href="posts/actual">Актуално</a>
+                        </li>
+                                                                                                <li class="first">
+                            <a href="posts/news-for-investors">Новини за инвеститори</a>
+                        </li>
+                                                                                                                                                <li class="first">
+                            <a href="posts/news-integration-with-online-stores">Новини интеграция с онлайн магазини</a>
+                        </li>
+                                                                                                <li class="first">
+                            <a href="posts/activities-corporate-sustainability">Корпоративна устойчивост</a>
+                        </li>
+                                                                       
+                    </ul>
+
+                </nav><!-- /.navAside -->
+            </aside><!-- /.sidebar -->
+                <article class="article">
+                    <p> </p>
+                    <div class="accent accentNews">
+                        <div class="wrapper">
+                            <div class="module moduleRelated">
+                                <div class="moduleHead">
+
+                                </div><!-- /.moduleHead -->
+
+                                <div class="boxes boxesNews">
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-supports-tree-planting" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Oct <span style="font-size: 10px;">2024</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Засаждане на дръвчета с подкрепата на Спиди</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-adopted-3-beehives-from-Istinski-Med" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Sep <span style="font-size: 10px;">2024</span></span>
+                                            <span class="day">26</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди осинови 3 пчелни кошера от „Истински мед“</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Triathlon2024" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Aug <span style="font-size: 10px;">2024</span></span>
+                                            <span class="day">30</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Триатлон 2024</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Remix-Clean-Out" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jul <span style="font-size: 10px;">2024</span></span>
+                                            <span class="day">25</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Remix Clean Out</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/The-Best-Courier-Delivery-Excellence-Challenge-2024" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jul <span style="font-size: 10px;">2024</span></span>
+                                            <span class="day">05</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Най-добър куриер - Delivery Excellence Challenge 2024</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Digital-Food-Vouchers-for-Speedy-Employees" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2024</span></span>
+                                            <span class="day">13</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Дигитални ваучери за храна за служителите на Спиди</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Manager-Development-Program-2024" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2024</span></span>
+                                            <span class="day">07</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Програма за развитие на мениджъри в Оперативен отдел</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Earth-Day-2024" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Apr <span style="font-size: 10px;">2024</span></span>
+                                            <span class="day">23</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Нашата социална и екологична ангажираност: Ден на земята</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Gender-Equality-Internal-Campaign-for-Engagement-2024" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Mar <span style="font-size: 10px;">2024</span></span>
+                                            <span class="day">08</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Равноправие между половете - вътрешна кампания за ангажираност</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Triathlon-Burgas-2023" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Sep <span style="font-size: 10px;">2023</span></span>
+                                            <span class="day">12</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Триатлон Бургас 2023</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/State-Triathlon-Championship-Plovdiv-2023" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Aug <span style="font-size: 10px;">2023</span></span>
+                                            <span class="day">14</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Държавно първенство по триатлон – Пловдив 2023</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/2023-World-Rowing-Championship-Plovdiv" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jul <span style="font-size: 10px;">2023</span></span>
+                                            <span class="day">16</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Световно първенство по гребане 2023, Пловдив</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Collect-all-Letters-of-the-Bulgarian-Alphabet" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2023</span></span>
+                                            <span class="day">24</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Събери всички букви от българската азбука!</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Mladost-Cup-2023" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2023</span></span>
+                                            <span class="day">15</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Mеждународeн турнир по фехтовка за деца &quot;Купа Младост&quot;</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Down-Town-in-the-heart-of-the-dream" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jan <span style="font-size: 10px;">2023</span></span>
+                                            <span class="day">23</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Даун Таун в сърцето на мечтата</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/We-are-saving-trees-with-the-FinDep-initiative-for-digitalization-of-documents" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Dec <span style="font-size: 10px;">2022</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спасяваме дървета с инициатива на ФО за дигитализация на документи</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Business-Cup-of-the-Dimitar-Berbatov-Foundation" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Oct <span style="font-size: 10px;">2022</span></span>
+                                            <span class="day">08</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>„Купата на бизнеса“ на фондация Димитър Бербатов</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Kwiat-2022" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Aug <span style="font-size: 10px;">2022</span></span>
+                                            <span class="day">29</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>КВЯТ: 10 години национална кампания за профилактика на детското зрение</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Triathlon-2022" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2022</span></span>
+                                            <span class="day">25</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Триатлон 2022</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-delivers-the-annual-calendars-of-the-Down-Syndrome-Association-Bulgaria" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jan <span style="font-size: 10px;">2022</span></span>
+                                            <span class="day">22</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди разнася календарите на Сдружение „Синдром на Даун България“</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Triathlon-Burgas-2021" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Sep <span style="font-size: 10px;">2021</span></span>
+                                            <span class="day">13</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Триатлон Бургас 2021</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-participates-in-the-Schneider-Electric-DonateEnergy-initiative" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Aug <span style="font-size: 10px;">2021</span></span>
+                                            <span class="day">21</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди участва в инициативата на Schneider Electric #Дари енергия</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/International-Programming-Competition-CodeIT-2021" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Aug <span style="font-size: 10px;">2021</span></span>
+                                            <span class="day">16</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Международен конкурс по програмиране CodeIT 2021</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-supports-young-sport" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jul <span style="font-size: 10px;">2021</span></span>
+                                            <span class="day">14</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди подкрепя ученическия спорт</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-brings-good-news-to-people-in-need" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2021</span></span>
+                                            <span class="day">28</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди носи добри новини на хората в нужда</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/SPEEDY-SUPPORTS-BULGARIAN-SPORT-AND-YOUNG-ATHLETES" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Apr <span style="font-size: 10px;">2021</span></span>
+                                            <span class="day">16</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди подкрепя младите спортисти</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/SPEEDY-SUPPORTS-CHILDRENS-BOOKS-FOUNDATION-INITIATIVE" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Nov <span style="font-size: 10px;">2020</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Фондация Детски книги</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/SPEEDY-SUBMITS-THE-CALENDARS-OF-THE-ASSOCIATION-OF-PARENTS-WITH-CHILDREN-WITH-DOWN-SYNDROME" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Sep <span style="font-size: 10px;">2020</span></span>
+                                            <span class="day">14</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Слънчевите деца на България</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-partners-in-the-international-program-for-children-and-students-Space-mail" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Sep <span style="font-size: 10px;">2019</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Космическа поща</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy’s-electric-paxters-an-environmental-solution-for-urban-supplies" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Aug <span style="font-size: 10px;">2019</span></span>
+                                            <span class="day">29</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Зелени доставки</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Taking-care-of-children&#039;s-vision" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Mar <span style="font-size: 10px;">2019</span></span>
+                                            <span class="day">28</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>С грижа за детското зрение</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Green-urban-deliveries" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Aug <span style="font-size: 10px;">2018</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Зелени доставки в градска среда</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-is-looking-for-trainees-2019" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jul <span style="font-size: 10px;">2018</span></span>
+                                            <span class="day">31</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди търси стажанти 2019</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Sponsorship-of-Alex-Donski-young-bulgarian-tennis-hope" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2018</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спонсорство на Алекс Донски - млада българска тенис надежда</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Launch-of-Sofia-City-Logistic-Park-sports-zone" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2018</span></span>
+                                            <span class="day">21</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Откриване на спортна площадка София Сити Лоджистик Парк</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-management-trainee-program-campaign-2018" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Feb <span style="font-size: 10px;">2018</span></span>
+                                            <span class="day">28</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди търси таланти  кампания 2018</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Teresa-Marinova-and-friends" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Feb <span style="font-size: 10px;">2018</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спортна надпревара за деца „Тереза Маринова и приятели”</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/speedy-trains-future-staff" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jan <span style="font-size: 10px;">2018</span></span>
+                                            <span class="day">29</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди обучава бъдещи кадри</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Sponsorship-of-the-National-Tennis-League" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Dec <span style="font-size: 10px;">2017</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спонсорство на Национална тенис лига</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/We-deliver-the-calendars-of-the-parents&#039;-Association-of-children-with-the-Down-syndrome" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Sep <span style="font-size: 10px;">2017</span></span>
+                                            <span class="day">15</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Подкрепа на Сдружението на родители с деца със синдром на Даун</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-management-trainee-program-6-2017-2018" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2017</span></span>
+                                            <span class="day">28</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди търси таланти - кампания 2017/18</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-partner-in-Kwiat-national-campaign-for-children-eye-health-017" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2017</span></span>
+                                            <span class="day">21</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди - партньор в националната кампания на Kwiat за профилактика на детското зрение</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-participated-in-the-donation-campaign-for-bulgarian-schools-abroad-Window-to-the-motherland" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2017</span></span>
+                                            <span class="day">25</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди се включи в дарителската кампания за българските училища зад граница „Прозорец към родината”</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-supported-the-the-students-athletics-games-finals" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Mar <span style="font-size: 10px;">2017</span></span>
+                                            <span class="day">26</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди отново подкрепи финалите на ученическите игри по лека атлетика за девойки и юноши</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/speedy-supports-competition-Theresa-Marinova-and-friends" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Oct <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди подкрепи турнирa „Тереза Mаринова и приятели”</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-and-students-from-the-Mathematics-high-school-in-Burgas-together-in-charity" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jul <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">06</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди и учениците от Природо-математическата гимназия в Бургас заедно в благотворителна акция</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Caring-for-children-vision" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">18</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>С грижа за детското зрение</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Support-for-Volleyball-academy" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">14</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Волейболната академия на ЦПВК София отново получи подкрепа от Спиди</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Our-football-team-took-part-in-charity-tournament" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">13</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Футболистите на Cпиди участваха в благотворителен турнир</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-supports-school-sports-teams" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">16</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Подкрепа за спортните отбори на училищата, обучаващи най-добрите лекоатлети</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Another-Knowledge-parcel-to-schools-in-Bulgaria-and-France" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">15</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Нова &quot;Доставка знание&quot; за училища в България и Франция</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-supported-Bottle-Caps-in-Action-eco-and-social-campaign" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">13</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди стана част от социалната и еко кампания &quot;Kапачки в действие&quot;</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy’s-bike-team-back-in-action" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Apr <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">27</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Велоотборът на Спиди отново в действие</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-Tereza-and-friends" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Mar <span style="font-size: 10px;">2016</span></span>
+                                            <span class="day">16</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди, Tереза и приятели</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Bulgarian-national-mathematics-team-for-girls-won-4-medals-at-european-olympics" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Dec <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">29</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Националният отбор по математика за девойки с 4 медала от европейската олимпиада</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Athletics-equipment-from-Speedy-to-Varna-school-teams" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Nov <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">18</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Атлетическа екипировка от Cпиди за варненски училищни отбори</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Champions-with-Speedys-logo" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Sep <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">06</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Шампиони с екипите на Cпиди</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-supports-and-relies-on-civilian-control-of-driver-behavior" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">14</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди подкрепя и разчита на гражданския контрол над поведението на шофьорите-куриери на пътя</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Our-IT-department-took-part-in-24-hour-bike-race" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">10</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>ИТ отделът на Cпиди се впусна в 24-часов веломаратон</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedys-IT-department-took-part-in-Vitosha-100km-Tour" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">24</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Колеги от ИТ отдела взеха участие в „Oбиколка на витоша 100 км“</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/National-athletics-school-games-2015" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Apr <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">22</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди и Tереза Mаринова стимулират Ученическите игри по лека атлетика</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Together-in-business-together-for-society" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Apr <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">20</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Заедно в бизнеса, заедно за обществото</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-was-honoured-Investor-in-knowledge-by-the-annual-business-awards-for-responsibility" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Apr <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">18</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди получи признание на годишните награди за отговорен бизнес в категория „Инвеститор в знанието”</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Girls-national-team-of-mathematics-won-four-medals-at-the-European-olympics" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Mar <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">09</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>4 медала за Hационалния отбор по математика за девойки</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Training-for-internal-audit-ISO-9001&amp;2008" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jan <span style="font-size: 10px;">2015</span></span>
+                                            <span class="day">01</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Обучение на служители на Cпиди за вътрешен одит по ISO 9001 &amp; 2008</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-helps-Sofia-spring-cleaning-campaign" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Nov <span style="font-size: 10px;">2014</span></span>
+                                            <span class="day">23</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Включихме се в пролетното почистване на Cофия</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-again-reached-out-children-with-Down-syndrome" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Nov <span style="font-size: 10px;">2014</span></span>
+                                            <span class="day">21</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди отново протегна ръка на децата със синдром на Даун</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-supports-Bulgarian-Jiu-jitsu-team-to-the-first-european-championship" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Aug <span style="font-size: 10px;">2014</span></span>
+                                            <span class="day">29</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди подкрепя българския отбор на първото европейско първенство по спортно джу джицу</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-supports-the-parents-Association-of-children-with-Down-syndrome" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jul <span style="font-size: 10px;">2014</span></span>
+                                            <span class="day">23</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди подкрепя Cдружението на родителите на деца със синдром на Даун</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-participated-in-the-aid-for-the-flooded-areas" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jul <span style="font-size: 10px;">2014</span></span>
+                                            <span class="day">10</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди се включи в помощта за наводнените райони</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedys-newsletter-is-already-printed-on-recycled-paper" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2014</span></span>
+                                            <span class="day">11</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Бюлетинът на Cпиди вече се печата на рециклирана хартия</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-became-member-of-the-Green-circle-of-Manager-magazine" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">May <span style="font-size: 10px;">2014</span></span>
+                                            <span class="day">12</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди стана член на Зеления кръг на сп. Мениджър</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-sponsored-again-the-games-in-track-and-field-athletics-for-students" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Mar <span style="font-size: 10px;">2014</span></span>
+                                            <span class="day">20</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди отново спонсорира игрите по лека атлетика за ученици</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-will-support-again-the-best-mathematicians-in-Bulgaria" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Oct <span style="font-size: 10px;">2013</span></span>
+                                            <span class="day">24</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди отново подкрепя най-добрите математици на България</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Work-safety-at-Speedy" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Jun <span style="font-size: 10px;">2013</span></span>
+                                            <span class="day">11</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Безопасност на труда в Cпиди</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                                                            <a href="activities-corporate-sustainability/Speedy-presented-the-first-in-Bulgaria-electric-vehicle-for-the-business" class="box boxWide">
+                                           
+                                        <p class="date">
+                                            <span class="month" style="font-size: 11px;">Apr <span style="font-size: 10px;">2013</span></span>
+                                            <span class="day">25</span>
+                                        </p>
+                                        <div class="content"> 
+                                            <p class="title"><span>Спиди представи първите в България електромобили за бизнес цели</span></p>
+                                        </div>
+                                    </a><!-- /.box -->
+                                                                    </div>
+                            </div><!-- /.module -->
+                        </div><!-- /.wrapper -->
+                    </div><!-- /.accent -->
+                    <p></p>
+                </article>
+
+             
+                <nav class="paging">
+                    <ul>
+                        <li class="prev" style="display:none">
+                            <a href="/bg/news/0"></a>
+                        </li>
+
+                        <li class="selected">
+                            <a href="/bg/news">1</a>
+                        </li>
+                        <li class="">
+                            <a href="/bg/news/2">2</a>
+                        </li>
+                        <li class="">
+                            <a href="/bg/news/3">3</a>
+                        </li>
+                        <li class="">
+                            <a href="/bg/news/4">4</a>
+                        </li>
+                        <li class="">
+                            <a href="/bg/news/5">5</a>
+                        </li>
+
+                        <li class="dots">...</li>
+                        <a href="/bg/news/98">98</a>
+
+                        <li class="next" style="">
+                            <a href="/bg/news/2"></a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div><!-- /.mainContent -->
+
+            <aside class="sidebar">
+                <p class="titleAside">Новини</p>
+
+                <nav class="navAside">
+                    <ul>
+                                                                        <li class="first">
+                            <a href="posts/actual">Актуално</a>
+                        </li>
+                                                                                                <li class="first">
+                            <a href="posts/news-for-investors">Новини за инвеститори</a>
+                        </li>
+                                                                                                                                                <li class="first">
+                            <a href="posts/news-integration-with-online-stores">Новини интеграция с онлайн магазини</a>
+                        </li>
+                                                                                                <li class="first">
+                            <a href="posts/activities-corporate-sustainability">Корпоративна устойчивост</a>
+                        </li>
+                                                                       
+                    </ul>
+
+                </nav><!-- /.navAside -->
+            </aside><!-- /.sidebar -->
+        </div><!-- /.wrapper -->
+    </div><!-- /.mainBody -->
+</section>
+            <footer id="footer">
+    <div class="footerTop">
+        <div class="wrapper">
+            <div class="cols">
+                                <div class="col colArticle">
+                    <article class="article">
+                                                <p><span class="footer-title accordion-title">Услуги</span></p>
+<ul>
+<li><a href="/bg/domestic-services">Услуги в България</a></li>
+<li><a href="/bg/worldwide-services">Международни услуги</a></li>
+<li><a href="/bg/web-services">Онлайн услуги</a></li>
+<li><a href="/bg/additional-services">Допълнителни услуги</a></li>
+</ul>
+<p><br /> <a href="https://myspeedy.speedy.bg/">MySpeedy</a></p>
+                                            </article>
+                </div>
+                                <div class="col colArticle">
+                    <article class="article">
+                                                <p><span class="footer-title accordion-title">За компанията</span></p>
+<ul>
+<li><a href="/bg/corporate-information">Корпоративна информация</a></li>
+<li><a href="/bg/careers">Кариери</a></li>
+<li><a href="/bg/files">Файлове</a></li>
+<li><a href="#">Други</a></li>
+</ul>
+<p><br /> <a href="/bg/news">Новини</a></p>
+                                            </article>
+                </div>
+                                <div class="col colArticle">
+                    <article class="article">
+                                                <p><span class="footer-title accordion-title">За инвеститори</span></p>
+<ul>
+<li><a href="/bg/company-information">Информация</a></li>
+<li><a href="/bg/financial-reports">Финансови отчети</a></li>
+<li><a href="/bg/general-meetings-of-shareholders">Общи събрания</a></li>
+</ul>
+<p><br /> <br /> <a href="/bg/investor-relations-contacts">Контакти за инвеститори</a></p>
+                                            </article>
+                </div>
+                                <div class="col colArticle">
+                    <article class="article">
+                                            </article>
+                </div>
+                                <div class="col colArticle">
+                    <article class="article">
+                                                <p><span class="footer-title accordion-title">Контакти</span></p>
+<ul>
+<li><a href="../../../../bg/contact-us">За връзка с нас</a></li>
+<li><a href="../../../../bg/opinions">Препоръки и рекламации</a></li>
+<li><a href="../../../../bg/faq?category=3">Често задавани въпроси</a></li>
+<li><a href="../../../../bg/price-list-and-fuel-surcharge">Тарифа и такси/надбавки</a></li>
+</ul>
+<p><br /><a href="../../../../bg/speedy-offices-automats">Офиси и Автомати</a></p>
+                                            </article>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <div class="wrapper">
+            <div class="footer-socials">
+                <span class="footer-socials-title">Дръжте ни под око</span>
+                <div class="socials socialsFooter">
+                    <a class="socialsItem facebook" href=" 	https://www.facebook.com/speedy.bg/ " target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#facebook"></use>
+                        </svg>
+                    </a>
+                    <a class="socialsItem youtube" href="https://www.youtube.com/channel/UC9wPu4-or4mlSHN4_T2dX3A" target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#youtube"></use>
+                        </svg>
+                    </a>
+                    <a class="socialsItem instagram" href="https://www.instagram.com/speedy.bg/" target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#instagram"></use>
+                        </svg>
+                    </a>
+                    <a class="socialsItem linkedin" href="https://www.linkedin.com/company/speedy-jsc" target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#linkedin"></use>
+                        </svg>
+                    </a>
+                    <a class="socialsItem rss" href="bg/RSS" target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#rss"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <p class="copy"><img src="public/assets/images/footer-logo.png" alt="Speedy">1998 - 2024 © Всички права запазени</p>
+            <article class="article" id="blockFooter">
+                <ul>
+                    <li><a href="/bg/terms-and-conditions-cookies">Общи условия и Бисквитки</a></li>
+                    <li><a href="/bg/gdpr">Защита на личните данни</a></li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</footer>        </div>
+                    <div id="slide-in-cookie" class="slide-in " data-expires="10" data-hide="120">
+                <div id="cookieSlideInText">
+                    <p><p>&bdquo;Бисквитките&ldquo; ни помагат да подобрим нашите услуги. Разглеждайки съдържанието на сайта, Вие се съгласявате и с използването на &bdquo;бисквитки&ldquo;</p> <a id="cookies-learn1" target=
+                        "form.openInSameTab" href="/bg/cookies">Научете повече</a></p>
+                </div>
+                <p>
+
+                    <a id="cookies-accept">Разбрах</a>
+                </p>
+            </div>
+            </div>
+
+    <a href="javascript:;" class="backToTop"></a>
+
+        <script>
+        document.addEventListener('buildJsLoaded', function () {
+            $backToTopBtn = $('.backToTop');
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $backToTopBtn.fadeIn();
+                } else {
+                    $backToTopBtn.fadeOut();
+                }
+            });
+
+            $(document).on("click", ".backToTop", function (e) {
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return false;
+            });
+        });
+    </script>
+    <div id="fb-root"></div>
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+        <script>
+        function buildJsReady() {
+            if (typeof window.CustomEvent !== 'function') {
+                function CustomEvent(event, params) {
+                    params = params || {
+                        bubbles: false,
+                        cancelable: false,
+                        detail: undefined
+                    };
+                    var evt = document.createEvent('CustomEvent');
+                    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+                    return evt;
+                }
+                CustomEvent.prototype = window.Event.prototype;
+                window.CustomEvent = CustomEvent;
+            }
+            var event = new window.CustomEvent('buildJsLoaded');
+            document.dispatchEvent(event);
+        }
+    </script>
+    <script onload="buildJsReady();" src="public/assets/js/build.js"></script>
+
+    <script src="public/dist/js/jquery-cookie.js"></script>
+    <!-- <script src="public/dist/js/cookies_main.js"></script>-->
+    <script type="text/javascript">
+        var email;
+        var $request;
+        $(function () {
+            var $newsletterForm = $("#newsletter");
+            var $bullteineGdprCheck = $newsletterForm.find(".validation-checkbox");
+            var validateGdpr = function () {
+                var isValid = true;
+                $bullteineGdprCheck.each(function (index, el) {
+                    if ($(el).data("required") === true) {
+                        if (!$(el).is(":checked")) {
+                            $(el).addClass("validation-failed");
+                            $(el).removeClass("validation-passed");
+                            var errorMessage = $(el).data("error-message");
+                            if (errorMessage.length > 0) {
+                                console.dir(errorMessage);
+                                $('#messages').html('<p class="msg msgError">' + errorMessage + '</p>');
+                            } else {
+                                $('#messages').html('<p class="msg msgError">' + "Трябва да се съгласите с условията" + '</p>');
+                            }
+                            isValid = false;
+                        } else {
+                            $(el).removeClass("validation-failed");
+                            $(el).addClass("validation-passed");
+                            $('#messages').html('');
+                        }
+                    }
+                });
+                return isValid;
+            };
+
+            $bullteineGdprCheck.on("change", validateGdpr);
+            $newsletterForm.on('submit', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $emailField = $('#stenik_newsletter_email');
+                var allowAjax = true;
+                email = $emailField.val();
+                if (email == '') {
+                    $emailField.parent().addClass('fieldError');
+                    allowAjax = false;
+                } else {
+                    $emailField.parent().removeClass('fieldError');
+                }
+                if ($request && $request.readyState != 4) {
+                    $request.abort();
+                }
+                if (!validateGdpr()) {
+                    allowAjax = false;
+                }
+                if (!allowAjax) {
+                    return;
+                }
+                $request = $.ajax({
+                    url: '/bg/newsletter',
+                    type: 'post',
+                    data: $("#newsletter").serialize(),
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $("body").removeClass("loaded")
+                    },
+                    success: function (data) {
+                        var msg = data.html;
+                        if (data.success) {
+                            $('#messages').html('<p class="msg msgSuccess">' + msg + '</p>');
+                            var success = true;
+                        } else {
+                            $('#messages').html('<p class="msg msgError">' + msg + '</p>');
+                        }
+                    },
+                    complete: function () {
+                        $("body").addClass("loaded")
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).on('ready', function () {
+
+            // sliderMain
+            if ($('#sliderMain .swiper-slide').length > 1) {
+                var sliderMain = new Swiper('#sliderMain', {
+                    autoplay: 5000,
+                    speed: 1000,
+                    loop: true,
+                    effect: 'fade',
+                    prevButton: '#sliderPrev',
+                    nextButton: '#sliderNext',
+                    preventClicks: false,
+                    bulletActiveClass: 'selected',
+                    autoplayDisableOnInteraction: false,
+                    keyboardControl: true,
+                    mousewheelControl: false,
+                    grabCursor: false,
+                    spaceBetween: 0
+                });
+
+                // pause on hover
+                $('#sliderMain').on('mouseenter', function () {
+                    sliderMain.stopAutoplay()
+                }).on('mouseleave', function () {
+                    sliderMain.startAutoplay()
+                });
+            } else {
+                $('#sliderPrev, #sliderNext').hide();
+            };
+        });
+        $(window).load(function () {
+            if ($(window).width() > 1024) {
+                $('#sliderMain img').attr('src', $('#sliderMain img').attr('data-src'));
+            }
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            function createPopup($item) {
+
+                if ($item.length) {
+                    var date = new Date();
+
+                    if (localStorage.getItem('popupExpire')) {
+                        var expirationTime = localStorage.getItem('popupExpire');
+                        if (date.getTime() > expirationTime) {
+                            $item.modal("show");
+                            localStorage.setItem('popupExpire', (date.getTime() + ($item.data("expires") * 1000)));
+                            var closeAfter = $item.data("closeafter");
+                            if (closeAfter > 0) {
+                                setTimeout(function () {
+                                    $item.modal("hide");
+                                }, closeAfter * 1000);
+                            }
+                        }
+
+                    } else {
+                        $item.modal("show");
+                        localStorage.setItem('popupExpire', (date.getTime() + ($item.data("expires") * 1000)));
+                        var closeAfter = $item.data("closeafter");
+                        if (closeAfter > 0) {
+                            setTimeout(function () {
+                                $item.modal("hide");
+                            }, closeAfter * 1000);
+                        }
+                    }
+
+                }
+
+            }
+            createPopup($(".widget-popup"));
+        })
+    </script>
+    <style>
+        .modal-header .close {
+            position: unset !important;
+        }
+    </style>
+
+</body>
+
+</html>

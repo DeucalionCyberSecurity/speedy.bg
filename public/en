@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home | Speedy
+</title>
+            <meta property="og:title" content="Home | Speedy
+" />
+    <meta property="og:site_name" content="Speedy" />
+    <meta property="og:description" />
+    <meta property="og:image" content="http://speedy.bg/uploads/media/speedy_slider/0001/03/05f8649fa0a61c052d4aa7e4901998665ed0e422.jpeg" />
+    <meta property="og:url" content="http://speedy.bg/bg/" />
+    <meta property="og:type" content="article" />
+    <meta property="twitter:image" content="http://speedy.bg/uploads/media/speedy_slider/0001/03/05f8649fa0a61c052d4aa7e4901998665ed0e422.jpeg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Начало" />
+
+    <link rel="canonical" href="https://speedy.bg/bg/" />
+    <link rel="alternate" hreflang="bg" href="https://speedy.bg/bg/">
+    <link rel="alternate" hreflang="en" href="https://speedy.bg/en/">
+    <link rel="icon" sizes="32x32" href="public/favicon.ico">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800,900&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+
+
+
+    <link rel="stylesheet" type="text/css" href="public/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="public/assets/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="public/assets/css/speedy.css">
+    <link rel="stylesheet" type="text/css" href="public/bundles/extstenikcookies/css/cookies.min.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="canonical" href="">
+    <meta name="csrf-token" content="yAe9IGNuPLAfblg9UNAvTnImklFDfzriHOOQyN3f" />
+    <style>
+a#CybotCookiebotDialogPoweredbyCybot,
+div#CybotCookiebotDialogPoweredByText {
+  display: none;
+}</style>
+    <script>
+        var currentUrl = window.location.href;
+        console.log(currentUrl);
+        if(!currentUrl.includes('infoboard')){
+            let script = document.createElement('script');
+        script.id = 'Cookiebot';
+        if (currentUrl.includes('en')) {
+            script.setAttribute('data-culture', 'en');
+        }
+        script.src = 'https://consent.cookiebot.com/uc.js';
+        script.setAttribute('data-cbid', '1f0ed7e3-59aa-4ea1-9139-9ec4a3939278');
+        script.setAttribute('data-blockingmode', 'auto');
+        script.type = 'text/javascript';
+        document.head.appendChild(script);
+        }
+       
+
+    </script>
+    <script src="public/dist/js/bootstrap.js"></script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M8RZGVJF');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8RZGVJF" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container-fluid">
+        <div class="sb-slidebar sb-right">
+    <div class="menu-header">
+        <div class="menu-header-title"><img style="max-width: 100px;" src="public/assets/images/logo.svg" alt="Speedy"></div>
+        <nav class="navLang" id="navLangResponsive">
+            <a href="javascript:;" class="navLangHead">
+                <span> EN </span>
+                <svg aria-hidden="true" class="iconSVG">
+                    <use xlink:href="public/assets/images/svgSprite.svg#iconArrowDown"></use>
+                </svg>
+            </a>
+            <ul class="navLangBody">
+                <li class="selected">
+                    <a href="/bg/"><span>BG</span></a>
+                </li>
+                <li>
+                    <a href="/en/"><span>EN</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="form" id="formSearch">
+        <div class="field">
+            <form id="searchForm" method="GET" action="/bg/search">
+                                <input placeholder="Search or track" type="search" name="q" id="search" class="searchNumber"
+                    required="">
+                                    <button class="searchButton">
+                    <svg aria-hidden="true" class="iconSVG iconSearch">
+                        <use xlink:href="public/assets/images/svgSprite.svg#iconSearch"></use>
+                    </svg>
+                </button>
+            </form>
+            <div id="results" style="display:none;"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var searchNumber = document.getElementsByClassName('serachNumber');
+        for (var i = 0; i < searchNumber.length; i++) {
+            searchNumber[i].addEventListener('input', function () {
+                var input = this.value;
+                if (input.startsWith('000') && input.length == 14) {
+                    this.value = input.slice(3);
+                }
+            });
+        }
+        document.addEventListener("buildJsLoaded", function () {
+            $('#searchForm').on('submit', function (e) {
+                $search = $('#search');
+                if ($search.val().length < 3) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        document.addEventListener("buildJsLoaded", function () {
+            var timeout = false;
+            var ajax = false;
+            var $searchInput = $("#search");
+            var ajaxCache = {};
+            $searchInput.on("keyup", function () {
+                if ($(this).val().length >= 3) {
+                    if (timeout) {
+                        clearTimeout(timeout);
+                        timeout = false;
+                    }
+                    if (ajax) {
+                        ajax.abort();
+                    }
+                    var val = $searchInput.val();
+                    if (val in ajaxCache) {
+                        $("#results").show().html(ajaxCache[val]);
+                    } else {
+                        timeout = setTimeout(function () {
+                            ajax = $.ajax({
+                                url: '/bg/search',
+                                data: {
+                                    q: val
+                                }
+                            }).done(function (response) {
+                                $("#results").show().html(response.html);
+                                ajaxCache[val] = response.html;
+                                timeout = false;
+                                ajax = false;
+                            });
+                        }, 200);
+                    }
+                }
+            });
+        });
+    </script>
+
+            <div id="menu">
+            <ul>
+                <li class="hasDropdown"><a href="javascript:;">
+                        Services
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="/en/domestic-services" target="_self">
+                                Domestic services
+
+                            </a></li>
+                        <li class=" hasDropdown"><a href="#" target="_self">
+                                International services
+
+                            </a>
+                            <ul class="dropdownSub">
+                                <li><a href="/en/cee" target="_self">
+                                        Speedy Eastern Europe Economy
+                                    </a></li>
+                                <li><a href="/en/europe" target="_self">
+                                        DPD Western Europe Economy
+                                    </a></li>
+                                <li><a href="/en/other-destinations" target="_self">
+                                        Air Express
+                                    </a></li>
+                                <li><a href="/en/requirements-to-international-shipments" target="_self">
+                                        Requirements
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/en/web-services" target="_self">
+                                Web Services
+                            </a></li>
+                        <li class=" hasDropdown"><a href="#" target="_self">
+                                Additional Services and Surcharges
+                            </a>
+                            <ul class="dropdownSub">
+                                <li><a href="/en/additional-services-for-shipments" target="_self">
+                                        For Shipments
+                                    </a></li>
+                                <li><a href="/en/payment-services" target="_self">
+                                        Payment Services 
+                                    </a></li>
+                                <li><a href="/en/administrative-services" target="_self">
+                                        Additional Services
+                                    </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hasDropdown"><a href="javascript:;">
+                        Offices and Lockers
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="/en/speedy-offices-automats" target="_self">
+                                Offices
+                            </a></li>
+                        <li><a href="/en/automats-information" target="_self">
+                                Lockers
+                            </a></li>
+                    </ul>
+                </li>
+                <li class="hasDropdown"><a href="#">
+                        My Speedy
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="https://myspeedy.speedy.bg" target="_blank">
+                                Вход
+                            </a></li>
+                        <li><a href="/en/my-speedy" target="_self">
+                                Инфо
+                            </a></li>
+                    </ul>
+                </li>
+                <li class="highlight hasDropdown"><a href="javascript:;">
+                        About Speedy
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="/en/about-company" target="_self">
+                                Contacts
+                            </a></li>
+                        <li><a href="/en/news" target="_self">
+                                News
+                            </a></li>
+                        <li><a href="/en/corporate-information" target="_self">
+                                Corporate information
+                            </a></li>
+                        <li><a href="/en/careers-operational-programs" target="_self">
+                                Careers and Operational programs
+                            </a></li>
+                        <li><a href="/en/investor" target="_self">
+                                Investor relations
+                            </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>        <div id="sb-site">
+
+            <header id="header">
+    <div class="headerBottom">
+        <div class="wrapper clearfix">
+            <a href="public/en" class="logo"><img
+                    src="public/assets/images/logo.svg" alt="Speedy"></a>
+            <div id="btnMenu" class="btn"><span></span></div>
+            <nav class="navLang" id="navLang">
+                <a href="javascript:;" class="navLangHead">
+                    <span>BG</span>
+                    <svg aria-hidden="true" class="iconSVG">
+                        <use xlink:href="public/assets/images/svgSprite.svg#iconArrowDown"></use>
+                    </svg>
+                </a>
+                <ul class="navLangBody">
+                    <li class="">
+                        <a
+                            href="public/bg"><span>Български</span></a>
+                    </li>
+                    <li class="selected">
+                        <a
+                            href="public/en"><span>English</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="form" id="formSearch">
+                <div class="field">
+                    <form id="searchForm" method="GET" action="/bg/search">
+                        <input placeholder="Search or track" type="search"
+                            name="q" id="search" class="searchNumber" required="">
+                        <button class="searchButton">
+                            <svg aria-hidden="true" class="iconSVG iconSearch">
+                                <use xlink:href="public/assets/images/svgSprite.svg#iconSearch"></use>
+                            </svg>
+                        </button>
+                    </form>
+                    <div id="results" style="display:none;"></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var searchNumber = document.getElementsByClassName('serachNumber');
+                for (var i = 0; i < searchNumber.length; i++) {
+                    searchNumber[i].addEventListener('input', function() {
+                        var input = this.value;
+                        if (input.startsWith('000') && input.length == 14) {
+                            this.value = input.slice(3);
+                        }
+                    });
+                }
+                document.addEventListener("buildJsLoaded", function() {
+                    $('#searchForm').on('submit', function(e) {
+                        $search = $('#search');
+                        if ($search.val().length < 3) {
+                            e.preventDefault();
+                        }
+                    });
+                });
+            </script>
+            <script type="text/javascript">
+                document.addEventListener("buildJsLoaded", function() {
+                    var timeout = false;
+                    var ajax = false;
+                    var $searchInput = $("#search");
+                    var ajaxCache = {};
+                    $searchInput.on("keyup", function() {
+                        if ($(this).val().length >= 3) {
+                            if (timeout) {
+                                clearTimeout(timeout);
+                                timeout = false;
+                            }
+                            if (ajax) {
+                                ajax.abort();
+                            }
+                            var val = $searchInput.val();
+                            if (val in ajaxCache) {
+                                $("#results").show().html(ajaxCache[val]);
+                            } else {
+                                timeout = setTimeout(function() {
+                                    ajax = $.ajax({
+                                        url: '/bg/search',
+                                        data: {
+                                            q: val
+                                        }
+                                    }).done(function(response) {
+                                        $("#results").show().html(response.html);
+                                        ajaxCache[val] = response.html;
+                                        timeout = false;
+                                        ajax = false;
+                                    });
+                                }, 200);
+                            }
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <nav class="navMain">
+        <div class="wrapper clearfix">
+            <ul>
+                                                                                <li><a href="#">Services</a>
+                                        <ul class="dropdown">
+                                                                                                                                                <li><a href="public/en/domestic-services" target="_self">Domestic services</a></li>
+                        
+                                                                                                                                                                        <li class=" hasDropdown"><a href="#"
+                                target="_self">International services</a>
+                            <ul class="dropdownSub">
+                                                                                                                                                                <li><a href="public/en/cee" target="_self">Speedy Eastern Europe Economy</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="public/en/europe" target="_self">DPD Western Europe Economy</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="public/en/air-express" target="_self">Air Express</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="public/en/requirements-to-international-shipments" target="_self">Requirements</a>
+                                </li>
+                                                                                            </ul>
+                        </li>
+                        
+                                                                                                                                                                        <li class=" hasDropdown"><a href="#"
+                                target="_self">Additional services and surcharges</a>
+                            <ul class="dropdownSub">
+                                                                                                                                                                <li><a href="public/en/additional-services-for-shipments" target="_self">For shipments</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="public/en/payment-services" target="_self">Payment services</a>
+                                </li>
+                                                                                                                                                                                                <li><a href="public/en/additional" target="_self">Additional Services</a>
+                                </li>
+                                                                                            </ul>
+                        </li>
+                        
+                                                                                                                                                                        <li><a href="public/en/web-services" target="_self">Web services</a></li>
+                        
+                                                                    </ul>
+                                    </li>
+                                                                                                <li><a href="#">Offices and Lockers</a>
+                                        <ul class="dropdown">
+                                                                                                                                                <li><a href="public/en/speedy-offices-automats" target="_self">Offices</a></li>
+                        
+                                                                                                                                                                        <li><a href="public/en/automats-information" target="_self">Lockers</a></li>
+                        
+                                                                    </ul>
+                                    </li>
+                                                                                                <li><a href="#">MySpeedy</a>
+                                        <ul class="dropdown">
+                                                                                                                                                <li><a href="https://myspeedy.speedy.bg" target="_blank">Log In</a></li>
+                        
+                                                                                                                                                                        <li><a href="public/en/my-speedy" target="_self">Info</a></li>
+                        
+                                                                    </ul>
+                                    </li>
+                                                                                                <li><a href="#">About Speedy</a>
+                                        <ul class="dropdown">
+                                                                                                                                                <li><a href="public/en/about-company" target="_self">Contacts</a></li>
+                        
+                                                                                                                                                                        <li><a href="public/en/news" target="_self">News</a></li>
+                        
+                                                                                                                                                                        <li><a href="public/en/corporate-information" target="_self">Corporate information</a></li>
+                        
+                                                                                                                                                                        <li><a href="public/en/careers-operational-programs" target="_self">Careers and Operational programs</a></li>
+                        
+                                                                                                                                                                        <li><a href="public/en/investor" target="_self">Investor relations</a></li>
+                        
+                                                                    </ul>
+                                    </li>
+                                
+            </ul>
+
+            <div class="header-phones">
+                <div class="header-phones-items">
+                                        <a class="header-phone" href="tel:0 7001 7001" target="_self">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#phone1"></use>
+                        </svg>
+                        0 7001 7001
+                    </a>
+                    <a class="header-phone-mobile" href="tel:1 7001 7001" target="_self">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#phone2"></use>
+                        </svg>
+                        1 7001 7001
+                    </a>
+                                    </div>
+            </div>
+        </div>
+    </nav>
+</header>
+            
+<div class="homepageTopContent">
+    <div class="slider swiper-container" id="sliderMain">
+        <div class="slides swiper-wrapper">
+            <div class="slide swiper-slide">
+                <span>
+                    <img src="uploads/media/speedy_slider/2024-speedy-spring-1711467028.jpg" data-src="uploads/media/speedy_slider/2024-speedy-spring-1711467028.jpg" alt="" class="desktop-image">
+                </span>
+            </div>
+        </div>
+        <div class="swiper-button-prev" id="sliderPrev" style="display: none;"></div>
+        <div class="swiper-button-next" id="sliderNext" style="display: none;"></div>
+    </div>
+    <div class="homepageTopContentWrapper wrapper clearfix">
+        <div class="shipment-track">
+            <span class="shipment-track-title">Track Shipment</span>
+            <form method="get" action="/bg/track-shipment">
+                <div>
+                    <div><input type="text" id="shipmentNumber" name="shipmentNumber" required="required" placeholder="Enter tracking number" class="shipment-input"></div>
+                </div>
+                <button class="btnPrimary">Track</button>
+            </form>
+            <p class="more-shipments-text"><a href="/bg/track-shipment">For tracking multiple shipments</a></p>
+        </div>
+        <script>
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('shipmentNumber')) {
+                var sn = urlParams.get('shipmentNumber');
+                if (sn.startsWith('000') && sn.length == 14) {
+                    urlParams.set('shipmentNumber', sn.slice(3));
+                    history.pushState(null, null, "?" + urlParams.toString());
+                }
+            }
+            var shipNumber = document.getElementById('shipmentNumber');
+            shipNumber.addEventListener('input', function() {
+                var input = this.value;
+                if (input.startsWith('000') && input.length == 14) {
+                    this.value = input.slice(3);
+                }
+            });
+        </script>
+        <div class="accent accentFeatured">
+            <p class="accentTitle">Quickly Create Your Parcel Label</p>
+            <div class="boxesAccent">
+                                <a href="https://services.speedy.bg/send/?language=En&amp;w=3" target="_blank" class="boxAccent">
+                    <div class="content">
+                        <p class="title">up to 3 kg</p>
+                        <div class="text">
+                            <p>2.99/4.56 BGN</p>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://services.speedy.bg/send/?language=En&amp;w=6" target="_blank" class="boxAccent">
+                    <div class="content">
+                        <p class="title">up to 6 kg</p>
+                        <div class="text">
+                            <p>6.35 BGN</p>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://services.speedy.bg/send/?language=En&amp;w=10" target="_blank" class="boxAccent">
+                    <div class="content">
+                        <p class="title">up to 10 kg</p>
+                        <div class="text">
+                            <p>7.81 BGN</p>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://services.speedy.bg/send/?language=En&amp;w=20" target="_blank" class="boxAccent">
+                    <div class="content">
+                        <p class="title">up to 20 kg</p>
+                        <div class="text">
+                            <p>13.96 BGN</p>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://services.speedy.bg/send/?language=En&amp;w=21" target="_blank" class="boxAccent">
+                    <div class="content">
+                        <p class="title">over 20 kg</p>
+                        <div class="text">
+                            <p>13.96 BGN + 0.60 BGN for...</p>
+                        </div>
+                    </div>
+                </a>
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accent accentBanners">
+    <div class="wrapper">
+        <div class="bannersAccent">
+                        <a style="background-color:#414042" href="public/en/domestic-services" target="_self" class="bannersAccentItem  skin-light">
+                <div class="photo">
+                    <img title="Стандарт 24 часа" alt="Стандарт 24 часа" src="uploads/media/speedy_banners/49e2776162a5e5b29579f82d2494870930f7c6d7.png" />
+                </div>
+                <div class="content">
+                    <p class="title">Domestic services</p>
+                </div>
+            </a>
+                        <a style="background-color:#808285" href="public/en/worldwide-services" target="_self" class="bannersAccentItem  skin-light">
+                <div class="photo">
+                    <img title="Стандарт 24 часа" alt="Стандарт 24 часа" src="uploads/media/speedy_banners/f33cd2401a0fbf272a20dc89fb09e72f4ce412af.png" />
+                </div>
+                <div class="content">
+                    <p class="title">International services</p>
+                </div>
+            </a>
+                        <a style="background-color:#cac4be" href="public/en/speedy-offices-automats" target="_self" class="bannersAccentItem  skin-dark">
+                <div class="photo">
+                    <img title="Стандарт 24 часа" alt="Стандарт 24 часа" src="uploads/media/speedy_banners/36291e260f114b1ec9f5990afa0255f86c65db55.png" />
+                </div>
+                <div class="content">
+                    <p class="title">Offices and Automats</p>
+                </div>
+            </a>
+                        <a style="background-color:#cac4be" href="calculate/?language=En" target="_blank" class="bannersAccentItem  skin-dark">
+                <div class="photo">
+                    <img title="Стандарт 24 часа" alt="Стандарт 24 часа" src="uploads/media/speedy_banners/95e90252113f31f9f4e16aec530ceb9207fc5f8e.png" />
+                </div>
+                <div class="content">
+                    <p class="title">Calculate costs (Speedy calculator)</p>
+                </div>
+            </a>
+                        <a style="background-color:#dc0032" href="public/en/news" target="_self" class="bannersAccentItem  skin-light">
+                <div class="photo">
+                    <img title="Стандарт 24 часа" alt="Стандарт 24 часа" src="uploads/media/speedy_banners/7981cc3bee7dd2d49ff19fd32c5814a68afc24a9.png" />
+                </div>
+                <div class="content">
+                    <p class="title">News</p>
+                </div>
+            </a>
+                        <a style="background-color:#e6e7e8" href="http://www.speedygoesgreen.bg/en/" target="_blank" class="bannersAccentItem  skin-dark">
+                <div class="photo">
+                    <img title="Стандарт 24 часа" alt="Стандарт 24 часа" src="uploads/media/speedy_banners/speedy-activities-black-52x52-1722343430.png" />
+                </div>
+                <div class="content">
+                    <p class="title">Corporate Sustainability</p>
+                </div>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
+
+            <footer id="footer">
+    <div class="footerTop">
+        <div class="wrapper">
+            <div class="cols">
+                                <div class="col colArticle">
+                    <article class="article">
+                                                <p><span class="footer-title accordion-title">Services</span></p>
+<ul>
+<li><a href="/en/domestic-services">Domestic services</a></li>
+<li><a href="/en/worldwide-services">International services</a></li>
+<li><a href="/en/web-services">Web services</a></li>
+<li><a href="/en/additional-services">Additional services</a></li>
+</ul>
+<p><br /> <a href="https://myspeedy.speedy.bg/">MySpeedy</a></p>
+                                            </article>
+                </div>
+                                <div class="col colArticle">
+                    <article class="article">
+                                                <p><span class="footer-title accordion-title">About Speedy</span></p>
+<ul>
+<li><a href="/en/corporate-information">Corporate Information</a></li>
+<li><a href="/en/careers">Careers</a></li>
+<li><a href="/en/files">Files</a></li>
+<li><a href="#">Other</a></li>
+</ul>
+<p><br /> <a href="/en/news">News</a></p>
+                                            </article>
+                </div>
+                                <div class="col colArticle">
+                    <article class="article">
+                                                <p><span class="footer-title accordion-title">Investor relations</span></p>
+<ul>
+<li><a href="/en/company-information">Company information</a></li>
+<li><a href="/en/financial-reports">Financial reports</a></li>
+<li><a href="/en/general-meetings-of-shareholders">General meetings of shareholders</a></li>
+</ul>
+<p><br /> <br /> <a href="/en/investor-relations-contacts">Contacts</a></p>
+                                            </article>
+                </div>
+                                <div class="col colArticle">
+                    <article class="article">
+                                            </article>
+                </div>
+                                <div class="col colArticle">
+                    <article class="article">
+                                                <p><span class="footer-title accordion-title">Contacts</span></p>
+<ul>
+<li><a href="../../../../en/contact-us">Contact us</a></li>
+<li><a href="../../../../en/opinions">Recommendations</a></li>
+<li><a href="../../../../en/faq?category=3">FAQ</a></li>
+<li><a href="../../../../en/price-list-and-fuel-surcharge">Price list and surcharges</a></li>
+</ul>
+<p><br /><a href="../../../../en/speedy-offices-automats">Offices and Lockers</a></p>
+                                            </article>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <div class="wrapper">
+            <div class="footer-socials">
+                <span class="footer-socials-title">Follow us social</span>
+                <div class="socials socialsFooter">
+                    <a class="socialsItem facebook" href=" 	https://www.facebook.com/speedy.bg/ " target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#facebook"></use>
+                        </svg>
+                    </a>
+                    <a class="socialsItem youtube" href="https://www.youtube.com/channel/UC9wPu4-or4mlSHN4_T2dX3A" target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#youtube"></use>
+                        </svg>
+                    </a>
+                    <a class="socialsItem instagram" href="https://www.instagram.com/speedy.bg/" target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#instagram"></use>
+                        </svg>
+                    </a>
+                    <a class="socialsItem linkedin" href="https://www.linkedin.com/company/speedy-jsc" target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#linkedin"></use>
+                        </svg>
+                    </a>
+                    <a class="socialsItem rss" href="public/bg/RSS" target="_blank">
+                        <svg aria-hidden="true" class="iconSVG">
+                            <use xlink:href="public/assets/images/svgSprite.svg#rss"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <p class="copy"><img src="public/assets/images/footer-logo.png" alt="Speedy">1998 - 2024 © All copyrights reserved</p>
+            <article class="article" id="blockFooter">
+                <ul>
+                    <li><a href="/bg/terms-and-conditions-cookies">Terms and conditions and Cookies</a></li>
+                    <li><a href="/bg/gdpr">GDPR</a></li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</footer>        </div>
+                    <div id="slide-in-cookie" class="slide-in " data-expires="10" data-hide="120">
+                <div id="cookieSlideInText">
+                    <p><p>Cookies help us improve our services. By viewing the content of the site, you also agree to the use of cookies</p> <a id="cookies-learn1" target=
+                        "form.openInSameTab" href="/en/cookies">Learn more</a></p>
+                </div>
+                <p>
+
+                    <a id="cookies-accept">Accept</a>
+                </p>
+            </div>
+            </div>
+
+    <a href="javascript:;" class="backToTop"></a>
+
+        <script>
+        document.addEventListener('buildJsLoaded', function () {
+            $backToTopBtn = $('.backToTop');
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $backToTopBtn.fadeIn();
+                } else {
+                    $backToTopBtn.fadeOut();
+                }
+            });
+
+            $(document).on("click", ".backToTop", function (e) {
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return false;
+            });
+        });
+    </script>
+    <div id="fb-root"></div>
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+        <script>
+        function buildJsReady() {
+            if (typeof window.CustomEvent !== 'function') {
+                function CustomEvent(event, params) {
+                    params = params || {
+                        bubbles: false,
+                        cancelable: false,
+                        detail: undefined
+                    };
+                    var evt = document.createEvent('CustomEvent');
+                    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+                    return evt;
+                }
+                CustomEvent.prototype = window.Event.prototype;
+                window.CustomEvent = CustomEvent;
+            }
+            var event = new window.CustomEvent('buildJsLoaded');
+            document.dispatchEvent(event);
+        }
+    </script>
+    <script onload="buildJsReady();" src="public/assets/js/build.js"></script>
+
+    <script src="public/dist/js/jquery-cookie.js"></script>
+    <!-- <script src="public/dist/js/cookies_main.js"></script>-->
+    <script type="text/javascript">
+        var email;
+        var $request;
+        $(function () {
+            var $newsletterForm = $("#newsletter");
+            var $bullteineGdprCheck = $newsletterForm.find(".validation-checkbox");
+            var validateGdpr = function () {
+                var isValid = true;
+                $bullteineGdprCheck.each(function (index, el) {
+                    if ($(el).data("required") === true) {
+                        if (!$(el).is(":checked")) {
+                            $(el).addClass("validation-failed");
+                            $(el).removeClass("validation-passed");
+                            var errorMessage = $(el).data("error-message");
+                            if (errorMessage.length > 0) {
+                                console.dir(errorMessage);
+                                $('#messages').html('<p class="msg msgError">' + errorMessage + '</p>');
+                            } else {
+                                $('#messages').html('<p class="msg msgError">' + "Трябва да се съгласите с условията" + '</p>');
+                            }
+                            isValid = false;
+                        } else {
+                            $(el).removeClass("validation-failed");
+                            $(el).addClass("validation-passed");
+                            $('#messages').html('');
+                        }
+                    }
+                });
+                return isValid;
+            };
+
+            $bullteineGdprCheck.on("change", validateGdpr);
+            $newsletterForm.on('submit', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $emailField = $('#stenik_newsletter_email');
+                var allowAjax = true;
+                email = $emailField.val();
+                if (email == '') {
+                    $emailField.parent().addClass('fieldError');
+                    allowAjax = false;
+                } else {
+                    $emailField.parent().removeClass('fieldError');
+                }
+                if ($request && $request.readyState != 4) {
+                    $request.abort();
+                }
+                if (!validateGdpr()) {
+                    allowAjax = false;
+                }
+                if (!allowAjax) {
+                    return;
+                }
+                $request = $.ajax({
+                    url: '/bg/newsletter',
+                    type: 'post',
+                    data: $("#newsletter").serialize(),
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $("body").removeClass("loaded")
+                    },
+                    success: function (data) {
+                        var msg = data.html;
+                        if (data.success) {
+                            $('#messages').html('<p class="msg msgSuccess">' + msg + '</p>');
+                            var success = true;
+                        } else {
+                            $('#messages').html('<p class="msg msgError">' + msg + '</p>');
+                        }
+                    },
+                    complete: function () {
+                        $("body").addClass("loaded")
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).on('ready', function () {
+
+            // sliderMain
+            if ($('#sliderMain .swiper-slide').length > 1) {
+                var sliderMain = new Swiper('#sliderMain', {
+                    autoplay: 5000,
+                    speed: 1000,
+                    loop: true,
+                    effect: 'fade',
+                    prevButton: '#sliderPrev',
+                    nextButton: '#sliderNext',
+                    preventClicks: false,
+                    bulletActiveClass: 'selected',
+                    autoplayDisableOnInteraction: false,
+                    keyboardControl: true,
+                    mousewheelControl: false,
+                    grabCursor: false,
+                    spaceBetween: 0
+                });
+
+                // pause on hover
+                $('#sliderMain').on('mouseenter', function () {
+                    sliderMain.stopAutoplay()
+                }).on('mouseleave', function () {
+                    sliderMain.startAutoplay()
+                });
+            } else {
+                $('#sliderPrev, #sliderNext').hide();
+            };
+        });
+        $(window).load(function () {
+            if ($(window).width() > 1024) {
+                $('#sliderMain img').attr('src', $('#sliderMain img').attr('data-src'));
+            }
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            function createPopup($item) {
+
+                if ($item.length) {
+                    var date = new Date();
+
+                    if (localStorage.getItem('popupExpire')) {
+                        var expirationTime = localStorage.getItem('popupExpire');
+                        if (date.getTime() > expirationTime) {
+                            $item.modal("show");
+                            localStorage.setItem('popupExpire', (date.getTime() + ($item.data("expires") * 1000)));
+                            var closeAfter = $item.data("closeafter");
+                            if (closeAfter > 0) {
+                                setTimeout(function () {
+                                    $item.modal("hide");
+                                }, closeAfter * 1000);
+                            }
+                        }
+
+                    } else {
+                        $item.modal("show");
+                        localStorage.setItem('popupExpire', (date.getTime() + ($item.data("expires") * 1000)));
+                        var closeAfter = $item.data("closeafter");
+                        if (closeAfter > 0) {
+                            setTimeout(function () {
+                                $item.modal("hide");
+                            }, closeAfter * 1000);
+                        }
+                    }
+
+                }
+
+            }
+            createPopup($(".widget-popup"));
+        })
+    </script>
+    <style>
+        .modal-header .close {
+            position: unset !important;
+        }
+    </style>
+
+</body>
+
+</html>
