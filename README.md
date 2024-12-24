@@ -4,15 +4,9 @@
 
 ---
 
-# Screenshots
-
-## Readme Images
-
-### GENERAL
+## Screenshots
 ![Speedy.BG - Index](public/assets/images/readme/index.png)
 ![Speedy.BG - Track Shipment](public/assets/images/readme/track-shipment.png)
-
-### D3VSOFT
 ![D3VSOFT - Index](public/assets/images/readme/d3vsoft/index.png)
 ![D3VSOFT - Tracking](public/assets/images/readme/d3vsoft/tracking.png)
 
