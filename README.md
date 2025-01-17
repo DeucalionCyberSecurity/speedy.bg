@@ -5,9 +5,7 @@
 ---
 
 ## Developer Details
-- **Email:** admin@d3vsoft.com
-- **Website:** https://d3vsoft.com
-- **Discord:** https://discord.gg/KtCPjNxndq
+- **PHONE/VIBER:** 0878641512
 
 ---
 
